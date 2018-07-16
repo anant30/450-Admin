@@ -53,14 +53,14 @@
                     "type": "datetime",
                     "format": "HH:mm:ss",
                     "def": function () { return new Date(); },
-                    "attr": { readonly: true }
+                 // "attr": { readonly: true }
                 },
                 {
                     "label": "Wait Time:",
                     "name": "wait_time",
                     "type": "datetime",
                     "format": "HH:mm:ss",
-                    "attr": { readonly: true }
+                //  "attr": { readonly: true }
                 }, 
                 {
                     "label": "Comment:",
@@ -69,9 +69,7 @@
                 },
                 {
                     "label": "Location:",
-                    "name": "location",
-                    "def": "450",
-                    "type": "readonly"
+                    "name": "location"
                 },
                 {
                     "label": "Date:",
@@ -79,7 +77,7 @@
                     "type": "datetime",
                     "format": "YYYY-MM-DD",
                     "def": function () { return new Date(); },
-                    "attr": { readonly: true }
+                //  "attr": { readonly: true }
                 },
             ]
         });
@@ -143,12 +141,13 @@
             lengthChange: false,
             "order": [[0, "desc"]],
 
-            "columnDefs": [
+          /*  "columnDefs": [
                 {
-                    "targets": [3, 4, 5, 8, 9, 10],
+                    "targets": [3, 4, 5, 8, 9, 10],         // All Columns visible
                     "visible": false,
                 }
             ],
+            */
         } );
 
     new $.fn.dataTable.Buttons( table, [
@@ -180,9 +179,9 @@
         },
     ]);
 
-    editor.field('scan_time').disable();
-    editor.field('location').disable();
-    editor.field('date').disable();
+   // editor.field('scan_time').disable();
+   // editor.field('location').disable();
+   // editor.field('date').disable();
     editor.field('wait_time').disable();
 
     setInterval(function () {
