@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EditorGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DbType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mysql</Value>
+    </Setting>
+    <Setting Name="DbConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Server=127.0.0.1;Port=3306;Database=scc_pwt;Uid=root;Pwd=2930;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
