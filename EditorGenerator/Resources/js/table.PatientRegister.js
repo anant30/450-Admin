@@ -1,5 +1,4 @@
 (function($){
-
     $(document).ready(function() {
         var editor = new $.fn.dataTable.Editor( {
             ajax: '/api/PatientRegister',
@@ -9,7 +8,6 @@
             //		"label": "Token No:",
             //		"name": "token_no"
             //	},
-
                 {
                     "label": "OHIP:",
                     "name": "ohip"
@@ -40,13 +38,13 @@
                     "type": "datetime",
                     "format": "HH:mm:ss"
                 },
-                {
+        /*      {
                     "label": "Show details",
                     "name": "options",
                     "type": "select",
                     "options": ["Simple", "All"],
                     "def": "Simple"
-                },
+                },                                  */
                 {
                     "label": "Scan Time:",
                     "name": "scan_time",
@@ -82,11 +80,12 @@
             ]
         });
 
-        editor.dependent('options', function (val) {
+   /*     editor.dependent('options', function (val) {
             return val == 'Simple' ?
             { hide: ['scan_time', 'location', 'date', 'wait_time'] } :
             { show: ['scan_time', 'location', 'date', 'wait_time'] };
         });
+   */
 
         $('#PatientRegister').on('click', 'tbody td.editable', function (e) {
             editor.bubble(this);
@@ -94,7 +93,7 @@
 
         var table = $('#PatientRegister').DataTable( {
 
-            scrollY: '62vh',
+            scrollY: '65vh',
             scrollCollapse: true,
             paging: false,
 
@@ -139,7 +138,7 @@
             ],
             select: true,
             lengthChange: false,
-            "order": [[0, "desc"]],
+            "order": [[10, 6, "desc"]],
 
           /*  "columnDefs": [
                 {
@@ -165,15 +164,14 @@
                 'print'
             ]
         },
-
+        // Immediately add current time
         {
             extend: "selectedSingle",
             text: "Add Service Time",
             action: function (e, dt, node, config) {
-                // Immediately add current time
                 editor
                     .edit(table.row({ selected: true }).index(), false)
-                    .set('service_time', new Date())
+                    .set('service_time', new Date())    
                     .submit();
             }
         },
@@ -182,7 +180,7 @@
    // editor.field('scan_time').disable();
    // editor.field('location').disable();
    // editor.field('date').disable();
-    editor.field('wait_time').disable();
+   // editor.field('wait_time').disable();
 
     setInterval(function () {
         table.ajax.reload();
@@ -191,5 +189,4 @@
     table.buttons().container()
 		.appendTo( $('.small-6.columns:eq(0)', table.table().container() ) );
 });
-
 }(jQuery));

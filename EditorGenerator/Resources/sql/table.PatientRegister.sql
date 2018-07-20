@@ -1,7 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS `PatientRegister` (
-	`id` int(10),
-	`token_no` int(10) NOT NULL auto_increment,
+	`id` int(10) NOT NULL auto_increment,
+	`token_no` int(10),
 	`ohip` numeric(10,0),
 	`name` varchar(255),
 	`birth_date` date,
@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS `PatientRegister` (
 	`service_time` time,
 	`scan_time` time,
 	`wait_time` time,
-	`location` numeric(3,0),
+	`location` int(3),
 	`date` date,
 	`comment` varchar(255),
-	PRIMARY KEY( `token_no` )
+	PRIMARY KEY( `id` )
 );

@@ -86,6 +86,7 @@
     <Content Include="Resources\images\ajax-loader.gif" />
     <Content Include="Resources\images\calender.png" />
     <Content Include="Resources\images\close.png" />
+    <Content Include="Resources\images\scc pwt.png" />
     <Content Include="Resources\images\shadow_left.png" />
     <Content Include="Resources\images\shadow_right.png" />
     <Content Include="Resources\js\dataTables.editor.js" />
